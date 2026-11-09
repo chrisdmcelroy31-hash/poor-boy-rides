@@ -52,7 +52,14 @@ if (fx && !reduceMotion.matches) {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     // vanishing point sits on the lead rider's headlight
     cx = w * 0.5;
-    cy = h * 0.42;
+    if (w <= h) {
+      // tall screens show the painting as a band under the header (see styles.css)
+      const header = document.querySelector('.site-header');
+      const top = header ? header.getBoundingClientRect().height : 71;
+      cy = top + w * 0.558 * 0.42;
+    } else {
+      cy = h * 0.42;
+    }
     reach = Math.hypot(w, h) * 0.6;
     const count = Math.round(Math.min(70, (w * h) / 14000));
     particles = Array.from({ length: count }, () => spawn({}, true));

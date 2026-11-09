@@ -239,6 +239,33 @@ a { color: inherit; }
   .eyebrow { font-size: .72rem; letter-spacing: .08em; gap: 6px; }
 }
 
+/* Phones and other tall screens: show the whole painting (all three riders) as a band
+   across the top, under the header, instead of cropping to the middle rider.
+   The image is 1920x1071, so at full width it is 55.8vw tall. */
+@media (max-aspect-ratio: 1/1) {
+  body::before {
+    background:
+      linear-gradient(to bottom, rgba(16, 19, 18, 0) calc(71px + 44vw), var(--iron) calc(71px + 55.8vw)),
+      linear-gradient(rgba(10, 12, 11, .2), rgba(10, 12, 11, .2)),
+      url("images/skeleton-riders.webp") 50% 71px / 100% auto no-repeat,
+      var(--iron);
+    scale: 1;
+    transform-origin: 50% 0;
+    animation-name: surge-band;
+  }
+  body.in-hero::before { animation: surge-band 7s ease-in-out infinite alternate, rumble 1.2s steps(4) infinite; }
+  .hero-logo { max-width: min(260px, 45vw); }
+  /* hero content starts below the painting so the logo doesn't cover the riders */
+  .hero {
+    padding-top: calc(55.8vw + 20px);
+    background: linear-gradient(transparent calc(55.8vw - 10px), rgba(8, 10, 9, .55) calc(55.8vw + 60px), rgba(8, 10, 9, .7) 100%);
+  }
+}
+@keyframes surge-band {
+  from { scale: 1; }
+  to   { scale: 1.03; }
+}
+
 /* ---------- Sections ---------- */
 .section { padding: clamp(64px, 9vw, 104px) 0; }
 .section-head {
