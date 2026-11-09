@@ -13,7 +13,9 @@
   --green-deep: #133d2a;
   --green-bright: #3f8d64;
 
-  --font-display: "Alfa Slab One", Georgia, serif;
+  /* Headlines: blackletter like a club back patch. UI (buttons, prices, labels): bold condensed so it stays easy to read. */
+  --font-display: "New Rocker", "Old English Text MT", Georgia, serif;
+  --font-ui: "Oswald", "Arial Narrow", sans-serif;
   --font-body: "Bitter", Georgia, serif;
   --font-script: "Yellowtail", cursive;
 
@@ -104,7 +106,7 @@ a { color: inherit; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5em;
   min-height: 48px; padding: 12px 24px;
-  font-family: var(--font-display); font-size: 1rem; letter-spacing: .04em; text-transform: uppercase;
+  font-family: var(--font-ui); font-weight: 700; font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase;
   text-decoration: none; border: 2px solid #000; border-radius: var(--radius);
   cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, filter .18s ease;
 }
@@ -132,7 +134,7 @@ a { color: inherit; }
   width: 48px; height: 48px; border-radius: 50%; object-fit: cover; object-position: 50% 35%;
   border: 2px solid var(--copper-dark);
 }
-.brand-text { font-family: var(--font-display); font-size: 1.35rem; letter-spacing: .02em; color: var(--chrome); }
+.brand-text { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: .01em; color: var(--chrome); }
 .brand-text em { font-style: normal; color: var(--copper); }
 @media (max-width: 380px) {
   .brand { gap: 8px; }
@@ -142,7 +144,7 @@ a { color: inherit; }
 
 .site-nav { display: flex; align-items: center; gap: 28px; }
 .site-nav a:not(.btn) {
-  text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .875rem;
+  font-family: var(--font-ui); text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: .875rem;
   padding: 8px 0; border-bottom: 2px solid transparent; transition: border-color .2s ease, color .2s ease;
 }
 .site-nav a:not(.btn):hover { border-color: var(--copper); color: #fff; }
@@ -193,11 +195,11 @@ a { color: inherit; }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-display); text-transform: uppercase; letter-spacing: .14em; font-size: .85rem;
+  font-family: var(--font-ui); font-weight: 700; text-transform: uppercase; letter-spacing: .16em; font-size: .9rem;
   color: var(--green-bright); margin-bottom: 16px;
 }
 .hero h1 {
-  font-size: clamp(2.75rem, 6.5vw, 5.25rem); text-transform: uppercase; letter-spacing: .01em;
+  font-size: clamp(3rem, 7vw, 5.75rem); letter-spacing: .01em;
   margin: 0; color: var(--chrome);
   text-shadow: 0 2px 0 #6b736f, 0 4px 0 #000, 0 10px 24px rgba(0, 0, 0, .6);
 }
@@ -275,7 +277,7 @@ a { color: inherit; }
 }
 .section-head .section-sub { color: var(--chrome); }
 #services, #gallery { background: rgba(8, 10, 9, .35); }
-.section-head h2 { font-size: clamp(2.25rem, 6vw, 3.5rem); text-transform: uppercase; color: var(--chrome); }
+.section-head h2 { font-size: clamp(2.5rem, 6.5vw, 4rem); color: var(--chrome); }
 .section-sub { color: var(--chrome-soft); max-width: 520px; margin-inline: auto; }
 .kicker { font-family: var(--font-script); font-size: 1.6rem; color: var(--copper); margin-bottom: 4px; }
 
@@ -298,11 +300,11 @@ a { color: inherit; }
 }
 .service-card { display: flex; flex-direction: column; padding: 32px 26px 26px; }
 .service-icon { width: 48px; height: 48px; color: var(--copper); margin-bottom: 16px; }
-.service-card h3 { font-size: 1.35rem; text-transform: uppercase; color: var(--chrome); }
+.service-card h3 { font-family: var(--font-ui); font-weight: 700; letter-spacing: .04em; font-size: 1.45rem; text-transform: uppercase; color: var(--chrome); }
 .service-card p { color: var(--chrome-soft); }
 .price {
   margin: auto 0 0 !important; padding-top: 16px; border-top: 1px solid var(--steel-light);
-  font-family: var(--font-display); font-size: 1.6rem; color: var(--copper-bright) !important;
+  font-family: var(--font-ui); font-weight: 700; font-size: 1.75rem; color: var(--copper-bright) !important;
 }
 .price span { display: block; font-family: var(--font-body); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--green-bright); }
 .service-card.featured {
@@ -322,7 +324,7 @@ a { color: inherit; }
 .tag {
   position: absolute; top: -14px; right: 16px;
   background: linear-gradient(180deg, var(--copper-bright), var(--copper)); color: #1a0f08; border: 2px solid #000;
-  font-family: var(--font-display); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase;
+  font-family: var(--font-ui); font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
   padding: 4px 10px; transform: rotate(3deg);
 }
 
@@ -343,12 +345,12 @@ a { color: inherit; }
 .about { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: center; }
 .about-badge { color: var(--copper); }
 .about-badge svg { width: 100%; height: auto; transform: rotate(-6deg); }
-.about-copy h2 { font-size: clamp(2rem, 5vw, 3rem); text-transform: uppercase; color: var(--chrome); }
+.about-copy h2 { font-size: clamp(2.25rem, 5.5vw, 3.4rem); color: var(--chrome); }
 .about-copy h2 span { color: var(--copper); display: block; }
 .about-copy p { color: var(--chrome-soft); max-width: 60ch; }
 .values { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
 .values li {
-  font-family: var(--font-display); text-transform: uppercase; font-size: .9rem; letter-spacing: .06em;
+  font-family: var(--font-ui); font-weight: 700; text-transform: uppercase; font-size: .95rem; letter-spacing: .08em;
   border: 2px solid var(--green-bright); color: #cfe3d7; background: rgba(29, 90, 62, .25);
   padding: 8px 16px; border-radius: 999px;
 }
@@ -387,7 +389,7 @@ a { color: inherit; }
 }
 .section-green .kicker { color: var(--copper-bright); }
 .visit { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-.visit h2 { font-size: clamp(2rem, 5vw, 3rem); text-transform: uppercase; }
+.visit h2 { font-size: clamp(2.25rem, 5.5vw, 3.4rem); }
 .visit address { font-style: normal; font-size: 1.25rem; margin-bottom: 24px; }
 .visit-actions { display: flex; flex-wrap: wrap; gap: 16px; }
 .visit .btn-ghost { color: #e6eee9; border-color: #e6eee9; }
@@ -396,7 +398,7 @@ a { color: inherit; }
   .visit-actions { justify-content: center; }
 }
 .hours { padding: 32px; }
-.hours h3 { text-transform: uppercase; font-size: 1.4rem; color: var(--copper-bright); border-bottom: 1px solid var(--steel-light); padding-bottom: 12px; }
+.hours h3 { font-family: var(--font-ui); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 1.4rem; color: var(--copper-bright); border-bottom: 1px solid var(--steel-light); padding-bottom: 12px; }
 .hours dl { margin: 0; }
 .hours dl div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--steel-light); }
 .hours dl div:last-child { border-bottom: 0; }
@@ -410,7 +412,7 @@ a { color: inherit; }
 /* ---------- Footer ---------- */
 .site-footer { background: #0b0d0c; color: var(--chrome-soft); padding: 40px 0 48px; text-align: center; font-size: .9rem; border-top: 3px solid var(--copper-dark); }
 .footer-logo { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: 50% 35%; margin: 0 auto 12px; border: 2px solid var(--copper-dark); }
-.footer-brand { font-family: var(--font-display); font-size: 1.6rem; color: var(--chrome); margin-bottom: 8px; }
+.footer-brand { font-family: var(--font-display); font-size: 1.9rem; color: var(--chrome); margin-bottom: 8px; }
 .footer-brand em { font-style: normal; color: var(--copper); }
 .site-footer p { margin-bottom: 6px; }
 
@@ -422,7 +424,7 @@ a { color: inherit; }
     display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px;
     background: linear-gradient(180deg, var(--copper-bright), var(--copper) 55%, var(--copper-dark));
     color: #1a0f08; text-decoration: none;
-    font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; font-size: 1.1rem;
+    font-family: var(--font-ui); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 1.15rem;
     border: 2px solid #000; border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0, 0, 0, .6);
   }
   .site-footer { padding-bottom: 104px; }
